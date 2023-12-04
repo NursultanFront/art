@@ -54,7 +54,7 @@ const isLastPage = computed(() => props.currentPage === props.lastPage)
 .pagination {
   display: flex;
   align-items: center;
-  // gap: px-to-rem(12px);
+  gap: 12px;
 
   &__button {
     padding: 0;
@@ -72,15 +72,11 @@ const isLastPage = computed(() => props.currentPage === props.lastPage)
 .per-page {
   display: flex;
   align-items: center;
-  // gap: px-to-rem(25px);
-
-  &__label {
-    // @include text-style(20px, 300);
-  }
+  gap: 25px;
 
   &__variants {
     display: flex;
-    // gap: px-to-rem(10px);
+    gap: 10px;
   }
 }
 
@@ -90,8 +86,8 @@ const isLastPage = computed(() => props.currentPage === props.lastPage)
   gap: px-to-rem(12px);
 
   &__icon {
-    // width: px-to-rem(24px);
-    // height: px-to-rem(24px);
+    width: 24px;
+    height: 24px;
 
     &_right {
       transform: rotate(180deg);
@@ -102,7 +98,7 @@ const isLastPage = computed(() => props.currentPage === props.lastPage)
 .page {
   display: flex;
   align-items: center;
-  // gap: px-to-rem(12px);
+  gap: 12px;
 
   &__separator {
     color: var(--text-dark-grey, rgba(41, 49, 72, 0.8));
@@ -110,19 +106,12 @@ const isLastPage = computed(() => props.currentPage === props.lastPage)
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px; /* 184.615% */
+    line-height: 24px;
   }
   &__number {
-    // @include padding(5px, 6px);
-
-    // @include border(1px, var(--text-line-gray));
-    // @include rounded-border(6px);
     text-align: center;
 
     min-width: 32px;
-    height: 32px;
-
-    // @include text-style(15px, 400, var(--text-dark-grey));
   }
 }
 </style>

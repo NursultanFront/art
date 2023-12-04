@@ -7,11 +7,22 @@ export const useCountryStore = defineStore('country', () => {
   const countryList = ref<CountryData[]>([])
   const pagination = ref<Rpag>()
 
-  async function getCountry() {
+  const currentPage = computed(() => {
+    if (pagination.value?.has_previous === false) {
+      return 1
+    }
+    return (pagination.value?.previous_page_number ?? 0) + 1
+  })
+
+  const maxPage = computed(() => {
+    return pagination.value?.pages ?? 50
+  })
+
+  async function getCountry(page = 1) {
     try {
       const res = await api.countryRest.getCounrty({
         filters: { iso_3166_1_a2: '' },
-        paginate: { page: 2, pp_items: 5 }
+        paginate: { page: page, pp_items: 10 }
       })
 
       countryList.value = res.page_data.data
@@ -21,5 +32,5 @@ export const useCountryStore = defineStore('country', () => {
     }
   }
 
-  return { countryList, pagination, getCountry }
+  return { countryList, pagination, getCountry, currentPage, maxPage }
 })

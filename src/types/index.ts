@@ -2,10 +2,13 @@ export interface Rpag {
   has_next: boolean
   has_previous: boolean
   has_other_pages: boolean
-  next_page_number: number
-  previous_page_number: number
+  next_page_number: number | null
+  previous_page_number: number | null
   start_index: number
   end_index: number
+  total_count: number
+  selected_count: number
+  pages: number
 }
 
 export interface CountryData {
