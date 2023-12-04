@@ -1,4 +1,4 @@
-interface Rpag {
+export interface Rpag {
   has_next: boolean
   has_previous: boolean
   has_other_pages: boolean
@@ -8,7 +8,7 @@ interface Rpag {
   end_index: number
 }
 
-interface Data {
+export interface CountryData {
   iso_3166_1_a2: string
   iso_3166_1_a3: string
   iso_3166_1_numeric: string
@@ -19,7 +19,7 @@ interface Data {
 }
 
 interface PageData {
-  data: Data[]
+  data: CountryData[]
   rpag: Rpag
 }
 
