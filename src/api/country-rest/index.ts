@@ -2,6 +2,7 @@ import { BasicRest } from '../basic-rest'
 
 import type { AxiosInstance } from 'axios'
 import type { ICountryRestPayload } from './types'
+import type { ICountryResponse } from '@/types'
 
 export class CountryRest extends BasicRest {
   public constructor(endpoint: AxiosInstance) {
@@ -9,6 +10,6 @@ export class CountryRest extends BasicRest {
   }
 
   public getCounrty(params: ICountryRestPayload) {
-    return this.postRequest('/test/', params)
+    return this.postRequest<ICountryResponse>('/test/', params)
   }
 }
