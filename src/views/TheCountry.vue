@@ -22,7 +22,7 @@ watchEffect(() => {
   const foundCountry = store.countryList.find((item) => item.iso_3166_1_a2 === props.country)
 
   if (!foundCountry && store.countryList.length > 0) {
-    router.push('/404')
+    router.push('/not-found')
     return
   }
 
