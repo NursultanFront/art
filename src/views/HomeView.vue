@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import TheWelcome from '../components/TheWelcome.vue'
 import { useCountryStore } from '@/stores/country'
+import CTable from '@/components/ui/CTable.vue'
 
 const store = useCountryStore()
 
@@ -12,6 +12,6 @@ onMounted(() => {
 
 <template>
   <main>
-    <TheWelcome />
+    <CTable :filter="store.countryList" />
   </main>
 </template>
