@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useCountryStore } from '@/stores/country'
 import type { CountryData } from '@/types'
-import { computed, onMounted, ref, watchEffect } from 'vue'
+import { onMounted, ref, watchEffect } from 'vue'
 import { useRouter } from 'vue-router'
 
 const store = useCountryStore()
